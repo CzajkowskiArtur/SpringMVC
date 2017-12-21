@@ -1,0 +1,37 @@
+<!DOCTYPE web-app PUBLIC
+        "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN"
+        "http://java.sun.com/dtd/web-app_2_3.dtd" >
+
+<web-app>
+    <display-name>Dupa Spring MVC</display-name>
+    <filter>
+        <filter-name>LoggedUserFilter</filter-name>
+        <filter-class>pl.sdacademy.filter.LoggedUserFilter</filter-class>
+    </filter>
+    <filter-mapping>
+        <filter-name>LoggedUserFilter</filter-name>
+        <url-pattern>/zabezpieczone/*</url-pattern>
+    </filter-mapping>
+    <servlet>
+        <servlet-name>spring-dispatcher</servlet-name>
+        <servlet-class>
+            org.springframework.web.servlet.DispatcherServlet
+        </servlet-class>
+        <init-param>
+            <param-name>contextClass</param-name>
+            <param-value>
+                org.springframework.web.context.support.AnnotationConfigWebApplicationContext
+            </param-value>
+        </init-param>
+        <init-param>
+            <param-name>contextConfigLocation</param-name>
+            <param-value>
+                pl.sdacademy.config.SdaAppCoreSpringConfig
+            </param-value>
+        </init-param>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>spring-dispatcher</servlet-name>
+        <url-pattern>/</url-pattern>
+    </servlet-mapping>
+</web-app>
