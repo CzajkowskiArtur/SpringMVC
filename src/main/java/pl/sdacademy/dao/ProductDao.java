@@ -1,4 +1,4 @@
-package pl.sdacademy.dao.impl;
+package pl.sdacademy.dao;
 
 import pl.sdacademy.entity.Product;
 

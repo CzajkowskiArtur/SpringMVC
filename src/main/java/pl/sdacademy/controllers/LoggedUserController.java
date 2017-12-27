@@ -18,6 +18,11 @@ public class LoggedUserController {
         //NAlezy pobrac ze stworzonego DAO wszystkie zamówienia dla użytkownika którego dane są w sesji pod kluczem"user"patrz LoggedUserFilter)
 
 
+        //
+
+
+        //
+
         return new ModelAndView("orders/",model);
     }
 }
